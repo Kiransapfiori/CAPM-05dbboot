@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table"
+	controllerName="krn.controller.main">
+	<Page title="welcome to ui5">
+		<Button text="loaddata" press="FunctionP"></Button>
+		<f:SimpleForm id="SimpleFormChange354" editable="true"
+			layout="ResponsiveGridLayout" title="Address" labelSpanXL="3"
+			labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+			emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+			columnsXL="1" columnsL="1" columnsM="1"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="Company Name" />
+				<Input id="name" value="{/postpayload/companyName}" />
+				<Label text="contactName" />
+				<Input id="conName" value="{/postpayload/contactName}">
+				</Input>
+				<Label text="lastName" />
+				<Input value="{/postpayload/lastName}">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				<Label text="Email" />
+				<Input id="email1" value="{/postpayload/email}" />
+			</f:content>
+		</f:SimpleForm>
+		<t:Table id="tid">
+			<t:columns>
+				<t:Column>
+					<t:label>
+						<Text text="Company Name"></Text>
+					</t:label>
+					<t:template>
+						<Text text="{companyName}"></Text>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<t:label>
+						<Text text="Email"></Text>
+					</t:label>
+					<t:template>
+						<Text text="{email}"></Text>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<t:label>
+						<Text text="contactName"></Text>
+					</t:label>
+					<t:template>
+						<Text text="{contactName}"></Text>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+				<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Save" type="Accept" press="onsave" />
+
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

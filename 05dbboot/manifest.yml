@@ -1,0 +1,5 @@
+applications:
+- name: 05dbboot
+  path: target/05dbboot-0.0.1-SNAPSHOT.war
+  random-route: true
+  memory: 1024M
